@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1f6f5c">
 <title>Cao thủ tính nhẩm</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Tính nhẩm">
 <style>
 :root{
   --bg:#f6f4ef; --card:#ffffff; --ink:#1d2430; --muted:#5e6878; --line:#e3ded3;
@@ -166,6 +172,63 @@ summary{cursor:pointer;color:var(--muted);font-size:.9rem}
   .sum b{font-size:1.25rem}
   .st .hide-s{display:none}
 }
+:root{--h1:#c3e5d8;--h2:#86c9b2;--h3:#43a184;--h4:#1f6f5c}
+@media (prefers-color-scheme: dark){:root{--h1:#1e4a3f;--h2:#2a6e5c;--h3:#3f9a80;--h4:#62d2b0}}
+header.top .brand{order:1}
+header.top nav{order:2}
+.sync{order:3;font-size:.8rem;padding:.3rem .65rem;border-radius:99px;background:var(--k);color:var(--muted);text-decoration:none;white-space:nowrap;font-weight:650;max-width:60vw;overflow:hidden;text-overflow:ellipsis}
+.sync.ok{background:var(--ok-soft);color:var(--ok)}
+.sync.wait{background:var(--warn-soft);color:var(--warn)}
+.sync.err{background:var(--bad-soft);color:var(--bad)}
+.sync.off{background:var(--accent);color:var(--accent-ink)}
+@media (max-width:600px){header.top nav{order:3;width:100%;margin-left:0}.sync{order:2;margin-left:auto}.su{display:none}}
+
+.login{position:fixed;inset:0;z-index:45;background:rgba(10,14,20,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto}
+.lbox{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.2rem;width:100%;max-width:400px;box-shadow:0 10px 40px rgba(0,0,0,.3);margin:auto}
+.lbox h2{margin:0 0 .3rem;font-size:1.3rem}
+.lbox .lmsg{margin:0 0 1rem;font-size:.92rem}
+.fld input[type=url],.fld input[type=text],.fld input[type=password],.fld input:not([type]){width:100%;border:1px solid var(--line);background:var(--bg);border-radius:.55rem;padding:.6rem .7rem;font-size:max(16px,1rem)}
+.fld input:focus{outline:none;border-color:var(--accent)}
+.pw{position:relative}.pw input{padding-right:2.8rem!important}
+.pwt{position:absolute;right:.25rem;top:50%;transform:translateY(-50%);border:0;background:none;font-size:1.1rem;padding:.35rem .45rem}
+.lerr{color:var(--bad);font-weight:600;min-height:1.2em;margin:.1rem 0 .6rem;font-size:.9rem}
+.lfoot{display:flex;justify-content:space-between;gap:.5rem;margin-top:.9rem;flex-wrap:wrap}
+
+.rv .rvh{display:flex;justify-content:space-between;align-items:center;gap:.5rem;margin-bottom:.5rem}
+.rv .rvh h2{margin:0}
+.rvl{display:flex;flex-direction:column;gap:.35rem}
+.rvi{display:flex;justify-content:space-between;gap:.6rem;flex-wrap:wrap;padding:.45rem .6rem;border-radius:.55rem;background:var(--bg);text-decoration:none;color:var(--ink);font-size:.92rem}
+.rvi span{color:var(--muted);font-size:.85rem}
+
+.src{font-size:.9rem}
+.sum{grid-template-columns:repeat(3,1fr)}
+.sum div{font-size:.82rem;color:var(--muted)}
+.hmw{overflow-x:auto;direction:rtl;padding-bottom:.2rem}
+.hm{direction:ltr;display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,12px);grid-auto-columns:12px;gap:3px;width:max-content}
+.hm i,.hml i{display:block;width:12px;height:12px;border-radius:3px;background:var(--k);cursor:pointer}
+.hml i{display:inline-block;cursor:default}
+.hm .hx{background:transparent;cursor:default}
+.h1{background:var(--h1)!important}.h2{background:var(--h2)!important}.h3{background:var(--h3)!important}.h4{background:var(--h4)!important}
+.hml{display:flex;gap:3px;align-items:center;font-size:.78rem;color:var(--muted);justify-content:flex-end;margin-top:.4rem}
+.tip{font-size:.85rem;min-height:1.3em;margin-top:.35rem}
+.chart{width:100%;height:auto;display:block;max-height:280px}
+.chart text{fill:var(--muted);font-size:9px;font-family:inherit}
+.chart .ta{fill:var(--warn)}
+.chart .gl{stroke:var(--line);stroke-width:1}
+.chart .bb{fill:var(--accent);opacity:.7}.chart .bt{fill:var(--accent)}
+.chart .lt{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linejoin:round}
+.chart .la{fill:none;stroke:var(--warn);stroke-width:1.8;stroke-dasharray:4 3}
+.chart .pt2{fill:var(--accent)}.chart .pa{fill:var(--warn)}
+.lgd{display:flex;gap:1rem;flex-wrap:wrap;font-size:.8rem;color:var(--muted);margin-top:.3rem}
+.lgd i{display:inline-block;width:16px;height:3px;vertical-align:middle;margin-right:.35rem;border-radius:2px}
+.lgd .kt{background:var(--accent)}.lgd .ka{background:var(--warn)}
+.tsel{width:100%;margin:.3rem 0 .6rem}
+.panel h2{margin-bottom:.6rem}
+.st .cg{color:var(--ok);font-weight:700}.st .cm{color:var(--warn);font-weight:700}.st .cl{color:var(--bad);font-weight:700}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1rem;align-items:baseline}
+.kv span{color:var(--muted)}.kv .url{font-size:.8rem;word-break:break-all}
+.errt{color:var(--bad);font-weight:600}
+.btns{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}
 </style>
 </head>
 <body>
@@ -176,8 +239,22 @@ summary{cursor:pointer;color:var(--muted);font-size:.9rem}
     <a href="#/mix" data-nav="mix">Luyện tổng hợp</a>
     <a href="#/stats" data-nav="stats">Thống kê</a>
   </nav>
+  <a class="sync off" id="sync" href="#/account">Đăng nhập</a>
 </header>
 <main id="app"></main>
+
+<div class="login" id="login" hidden>
+  <form class="lbox" autocomplete="on">
+    <h2>🧮 Đăng nhập</h2>
+    <p class="muted lmsg"></p>
+    <div class="fld lurl"><label for="lu">Đường link Web App (…/exec)</label><input id="lu" type="url" inputmode="url" placeholder="https://script.google.com/macros/s/…/exec" autocomplete="off" autocapitalize="none" spellcheck="false"></div>
+    <div class="fld"><label for="ln">Tên đăng nhập</label><input id="ln" type="text" name="username" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false"></div>
+    <div class="fld"><label for="lp">Mật khẩu</label><div class="pw"><input id="lp" type="password" name="password" autocomplete="current-password"><button type="button" class="pwt" aria-label="Hiện hoặc ẩn mật khẩu">👁</button></div></div>
+    <div class="lerr" aria-live="polite"></div>
+    <button class="btn primary big" type="submit">Đăng nhập</button>
+    <div class="lfoot"><button type="button" class="link lchg">Đổi đường link máy chủ</button><button type="button" class="link loff">Dùng ngoại tuyến (không đồng bộ)</button></div>
+  </form>
+</div>
 
 <div class="fab">
   <div class="fabp" hidden>
@@ -190,6 +267,11 @@ summary{cursor:pointer;color:var(--muted);font-size:.9rem}
 </div>
 
 <script>
+// ================== CẤU HÌNH ==================
+// Dán đường link Web App của Google Apps Script (kết thúc bằng /exec) vào giữa hai dấu nháy.
+// Khi đã điền, mọi thiết bị mở trang chỉ cần nhập tên và mật khẩu.
+const API_URL='https://script.google.com/macros/s/AKfycbzCJtEl-EUPv8ZlT62oBABHjFbiPFiuJX0LYmr9_dG2-bdhfeNSgVM7ASOr32fUstdh/exec';
+
 /*GEN-START*/
 // ================== Tiện ích ==================
 const ri=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
@@ -692,17 +774,145 @@ const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const app=$('#app');
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 const TOUCH=window.matchMedia&&matchMedia('(pointer: coarse)').matches;
-let stats=LS.get('mm_stats',{});
-const S=Object.assign({fs:1,auto:true,kp:null,lv:{},mix:{g:[0,1,2,3,4,5,6],lv:'1',mode:'rand',time:'0'}},LS.get('mm_settings',{}));
+const S=Object.assign({fs:1,auto:true,kp:null,lv:{},trend:'',mix:{g:[0,1,2,3,4,5,6],lv:'1',mode:'rand',time:'0'}},LS.get('mm_settings',{}));
 if(S.kp===null)S.kp=TOUCH;
 const saveS=()=>LS.set('mm_settings',S);
 const nf1=new Intl.NumberFormat('vi-VN',{minimumFractionDigits:1,maximumFractionDigits:1});
 const fmtS=ms=>nf1.format(ms/1000)+' s';
 const ansText=q=>q.choices?q.ans:(q.rel?'≈ ':'')+f(q.a)+(q.u?' '+q.u:'');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,10);
+const p2=n=>String(n).padStart(2,'0');
+const dayKey=d=>`${d.getFullYear()}-${p2(d.getMonth()+1)}-${p2(d.getDate())}`;
+const parseDay=k=>{const[y,m,d]=k.split('-').map(Number);return new Date(y,m-1,d)};
+const addDays=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const weekKey=k=>{const d=parseDay(k);return dayKey(addDays(d,-((d.getDay()+6)%7)))};
+const dm=k=>{const d=parseDay(k);return `${d.getDate()}/${d.getMonth()+1}`};
+const plain=s=>String(s).replace(/<[^>]+>/g,'');
+const hhmm=ts=>{const d=new Date(ts);return `${p2(d.getHours())}:${p2(d.getMinutes())} ${d.getDate()}/${d.getMonth()+1}`};
 
-function record(id,ok,ms){const s=stats[id]||(stats[id]={n:0,c:0,t:0});s.n++;if(ok){s.c++;s.t+=Math.min(ms,60000)}LS.set('mm_stats',stats)}
+// ================== Dữ liệu thống kê ==================
+// agg = số liệu đang hiển thị = bản tổng hợp tải từ Google Sheet + các câu chưa gửi lên.
+// Khi dùng ngoại tuyến (chưa từng tải từ Sheet), agg được lưu trên máy.
+let server=LS.get('mm_server',null);
+let queue=LS.get('mm_queue',[]);
+let agg,stats={};
+const saveQ=()=>LS.set('mm_queue',queue);
+function applyRow(A,r){
+  const day=dayKey(new Date(r.ts)),ok=!!r.ok,ms=Math.min(r.ms,60000);
+  const t=A.topics[r.tid]||(A.topics[r.tid]={n:0,c:0,t:0,last:''});t.n++;if(ok){t.c++;t.t+=ms}if(!t.last||day>t.last)t.last=day;
+  const d=A.days[day]||(A.days[day]={n:0,c:0});d.n++;if(ok)d.c++;
+  const W=A.weeks[r.tid]||(A.weeks[r.tid]={}),wk=weekKey(day),w=W[wk]||(W[wk]=[0,0,0]);w[0]++;if(ok){w[1]++;w[2]+=ms}
+}
+function rebuild(){
+  if(server){agg=JSON.parse(JSON.stringify({topics:server.topics||{},days:server.days||{},weeks:server.weeks||{}}));queue.forEach(r=>applyRow(agg,r))}
+  else{
+    agg=LS.get('mm_agg',null);
+    if(!agg){agg={topics:{},days:{},weeks:{}};const old=LS.get('mm_stats',null);if(old)for(const k in old)agg.topics[k]=Object.assign({last:''},old[k])}
+  }
+  stats=agg.topics;
+}
+function record(q,ok,ms,ua,p){
+  const t=TT[q.id];
+  const row={id:uid(),ts:Date.now(),sid:p.sid,tid:q.id,tn:t.name,g:`${t.g} · ${GROUPS[t.g].n}`,lv:q.lv,mode:p.cfg.mode||'Theo bài',
+    q:plain(q.q),a:ansText(q),ua:String(ua),ok:ok?1:0,ms:Math.round(ms),dev:TOUCH?'Điện thoại':'Máy tính'};
+  applyRow(agg,row);
+  queue.push(row);if(queue.length>20000)queue.splice(0,queue.length-20000);
+  saveQ();if(!server)LS.set('mm_agg',agg);
+  scheduleFlush();updSync();
+}
 function badge(id){const s=stats[id];if(!s||!s.n)return'<span class="bd">Chưa luyện</span>';const acc=Math.round(s.c/s.n*100),avg=s.c?s.t/s.c:null;
 const cls=acc>=90&&avg!==null&&avg<6000?'good':acc>=70?'mid':'low';return`<span class="bd ${cls}">${acc}% đúng · ${avg!==null?fmtS(avg):'–'} · ${s.n} câu</span>`}
+function reviewList(){
+  const today=parseDay(dayKey(new Date()));
+  return T.map(t=>{const s=stats[t.id];if(!s||!s.n)return null;
+    const acc=s.c/s.n,avg=s.c?s.t/s.c:15000,since=s.last?Math.round((today-parseDay(s.last))/864e5):30;
+    const why=[];let score=0;
+    if(acc<.9){score+=(.9-acc)*10;why.push(`đúng ${Math.round(acc*100)}%`)}
+    if(avg>5000){score+=Math.min((avg-5000)/2000,4);why.push(`TB ${fmtS(avg)}`)}
+    if(since>=3){score+=Math.min(since/3,4);why.push(`${since} ngày chưa luyện`)}
+    return score>0?{t,score,why}:null}).filter(Boolean).sort((a,b)=>b.score-a.score).slice(0,5);
+}
+
+// ================== Đồng bộ Google Sheet ==================
+const SY=Object.assign({url:'',token:null,user:'',lastSync:0,err:null,offline:false},LS.get('mm_sync',{}));
+const saveSY=()=>LS.set('mm_sync',SY);
+const apiUrl=()=>(API_URL||SY.url||'').trim();
+const URL_RE=/^https:\/\/script\.google\.com\/(a\/macros\/[^/]+|macros)\/s\/[\w-]+\/exec\/?$/;
+let flushing=false,flushTimer=null,syncing=null,lastPullTry=0;
+
+async function api(action,data,opt={}){
+  const url=apiUrl();if(!url)throw new Error('nourl');
+  const ctrl=new AbortController(),tm=setTimeout(()=>ctrl.abort(),opt.timeout||30000);
+  try{
+    const r=await fetch(url,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(Object.assign({action},data||{})),
+      redirect:'follow',signal:ctrl.signal,keepalive:!!opt.keepalive});
+    const txt=await r.text();
+    try{return JSON.parse(txt)}catch(e){throw new Error('badjson')}
+  }finally{clearTimeout(tm)}
+}
+const netMsg=e=>e&&e.message==='badjson'?'Máy chủ không trả về dữ liệu hợp lệ. Kiểm tra Web App đã triển khai với quyền truy cập “Bất kỳ ai”.':'Không kết nối được máy chủ. Kiểm tra mạng hoặc đường link Web App.';
+
+function authLost(){SY.token=null;saveSY();updSync();showLogin('Phiên đăng nhập đã hết hạn. Hãy đăng nhập lại — các câu chưa gửi vẫn được giữ.')}
+async function flush(opt={}){
+  if(flushing||!SY.token||!queue.length){updSync();return}
+  flushing=true;updSync();
+  try{
+    while(queue.length&&SY.token){
+      const batch=queue.slice(0,opt.keepalive?60:200);
+      const j=await api('log',{token:SY.token,rows:batch},opt);
+      if(!j.ok){if(j.error==='auth')authLost();else SY.err=j.message||'Máy chủ báo lỗi ('+j.error+')';break}
+      const acc=new Set(j.ids||[]);queue=queue.filter(r=>!acc.has(r.id));saveQ();SY.lastSync=Date.now();SY.err=null;
+      if(opt.keepalive||!acc.size)break;
+    }
+  }catch(e){SY.err=netMsg(e)}
+  finally{flushing=false;saveSY();updSync()}
+}
+function scheduleFlush(){clearTimeout(flushTimer);if(!SY.token)return;if(queue.length>=10)flush();else flushTimer=setTimeout(flush,15000)}
+async function pullStats(){
+  if(!SY.token)return;lastPullTry=Date.now();
+  try{const j=await api('stats',{token:SY.token});
+    if(j.ok){delete j.ok;server=Object.assign(j,{at:Date.now()});LS.set('mm_server',server);rebuild();SY.err=null;saveSY();softRender()}
+    else if(j.error==='auth')authLost();else SY.err=j.message||j.error;
+  }catch(e){SY.err=netMsg(e)}
+  updSync();
+}
+function syncAll(){if(syncing)return syncing;syncing=(async()=>{await flush();await pullStats()})().finally(()=>{syncing=null});return syncing}
+function updSync(){
+  const el=$('#sync');if(!el)return;let cls='',txt;
+  if(!SY.token){txt=queue.length?`Ngoại tuyến · ${queue.length}`:'Đăng nhập';cls='off'}
+  else if(flushing){txt='⏳ Đang gửi…';cls='wait'}
+  else if(SY.err){txt=`⚠ Chưa đồng bộ${queue.length?' · '+queue.length:''}`;cls='err'}
+  else if(queue.length){txt=`⏳ ${queue.length} chờ gửi`;cls='wait'}
+  else{txt='✓ Đã đồng bộ';cls='ok'}
+  el.className='sync '+cls;el.innerHTML=(SY.token?`<span class="su">${esc(SY.user)} · </span>`:'')+txt;
+  el.title=SY.err||'';
+}
+
+// ---------- Màn hình đăng nhập ----------
+const LG=$('#login');
+function showLogin(msg){
+  $('.lmsg',LG).textContent=msg||'Đăng nhập để lưu kết quả luyện tập vào Google Sheet của bạn.';
+  $('.lurl',LG).hidden=!!API_URL||!!SY.url;$('.lchg',LG).hidden=!!API_URL||!SY.url;
+  $('#lu').value=SY.url||'';if(SY.user)$('#ln').value=SY.user;
+  $('.lerr',LG).textContent='';LG.hidden=false;
+  setTimeout(()=>{const t=!$('.lurl',LG).hidden&&!$('#lu').value?$('#lu'):$('#ln').value?$('#lp'):$('#ln');t.focus()},50);
+}
+function hideLogin(){LG.hidden=true}
+$('.lchg',LG).onclick=()=>{$('.lurl',LG).hidden=false;$('.lchg',LG).hidden=true;$('#lu').focus()};
+$('.loff',LG).onclick=()=>{SY.offline=true;saveSY();hideLogin();updSync()};
+$('.pwt',LG).onclick=()=>{const p=$('#lp');p.type=p.type==='password'?'text':'password'};
+$('form',LG).onsubmit=async e=>{
+  e.preventDefault();const er=$('.lerr',LG),btn=$('button[type=submit]',LG);er.textContent='';
+  if(!API_URL){const u=$('#lu').value.trim();if(!URL_RE.test(u)){er.textContent='Đường link phải có dạng https://script.google.com/macros/s/…/exec';$('.lurl',LG).hidden=false;return}SY.url=u}
+  const user=$('#ln').value.trim(),pass=$('#lp').value;if(!user||!pass){er.textContent='Hãy nhập tên đăng nhập và mật khẩu.';return}
+  btn.disabled=true;btn.textContent='Đang đăng nhập…';
+  try{const j=await api('login',{user,pass});
+    if(j.ok){SY.token=j.token;SY.user=j.user;SY.offline=false;SY.err=null;saveSY();$('#lp').value='';hideLogin();updSync();route();syncAll()}
+    else er.textContent=j.error==='wrong'?`Sai tên đăng nhập hoặc mật khẩu${j.left!=null?` (còn ${j.left} lần thử)`:''}.`:j.error==='locked'?`Sai quá nhiều lần. Thử lại sau ${j.minutes} phút.`:j.error==='server'?'Lỗi máy chủ: '+(j.message||''):'Đăng nhập không thành công.';
+  }catch(x){er.textContent=netMsg(x)}
+  finally{btn.disabled=false;btn.textContent='Đăng nhập'}
+};
 
 // ---------- Router ----------
 function route(){
@@ -711,21 +921,26 @@ function route(){
   let nav='home';
   if(parts[1]==='t'&&TT[parts[2]]){renderTopic(parts[2])}
   else if(parts[1]==='mix'){renderMix();nav='mix'}
+  else if(parts[1]==='review'){renderReview();nav='stats'}
   else if(parts[1]==='stats'){renderStats();nav='stats'}
+  else if(parts[1]==='account'){renderAccount();nav=''}
   else renderHome();
   $$('nav a').forEach(a=>a.classList.toggle('on',a.dataset.nav===nav));
   window.scrollTo(0,0);
 }
+function softRender(){const h=location.hash.slice(1)||'/';if(h==='/'||h==='')renderHome();else if(h==='/stats')renderStats();else if(h==='/account')renderAccount()}
 window.addEventListener('hashchange',route);
 
 // ---------- Home ----------
 function renderHome(){
+  const rv=reviewList();
   app.innerHTML=`<div class="panel intro"><h1>Luyện tính nhẩm từ nền tảng đến kinh doanh</h1>
   <p class="muted" style="margin:.2rem 0 .4rem">${T.length} kỹ thuật trong 7 nhóm. Mỗi kỹ thuật có giải thích, ví dụ và đề luyện sinh ngẫu nhiên với 3 cấp độ.</p>
   <ol><li>Đọc <b>Giải thích</b> và bấm “Ví dụ khác” vài lần để hiểu cách làm.</li>
   <li>Luyện <b>Cấp 1</b> đến khi đúng trên 90% và dưới 5 giây/câu, rồi lên cấp.</li>
   <li>Học xong 2–3 kỹ thuật, vào <b>Luyện tổng hợp</b> để luyện kỹ năng nhận dạng.</li>
   <li>Mỗi ngày 15–20 phút; xem <b>Thống kê</b> để biết dạng nào còn yếu.</li></ol></div>`+
+  (rv.length?`<div class="panel rv"><div class="rvh"><b>🔁 Nên ôn hôm nay</b><a class="btn primary" href="#/review">Ôn ngay</a></div><div class="rvl">${rv.map(x=>`<a href="#/t/${x.t.id}" class="rvi"><b>${x.t.name}</b><span>${x.why.join(' · ')}</span></a>`).join('')}</div></div>`:'')+
   GROUPS.map((g,gi)=>`<section class="grp"><h2><span class="gn">Nhóm ${gi}</span>${g.n}</h2><p class="muted" style="margin:.1rem 0 0">${g.d}</p>
   <div class="grid">${T.filter(t=>t.g===gi).map(t=>`<a class="card" href="#/t/${t.id}"><span class="ct">${t.name}</span><span class="cs">${t.short}</span>${badge(t.id)}</a>`).join('')}</div></section>`).join('');
 }
@@ -745,7 +960,7 @@ function renderTopic(id){
   const sample=()=>{const q=t.gen(+slv.value);sbox.innerHTML=`<div class="sq">${q.q}</div>${q.h?`<div class="muted" style="font-size:.85rem">${q.h}</div>`:''}<div class="sa">Đáp án: <b>${ansText(q)}</b></div><div class="sol">${q.sol}</div>`};
   slv.onchange=sample;$('.snew').onclick=sample;sample();
   const pwrap=$('.pwrap');
-  const startLv=lv=>{S.lv[id]=lv;saveS();$$('.levels button').forEach(b=>b.classList.toggle('on',+b.dataset.lv===lv));startPractice(pwrap,{topics:[id],level:lv})};
+  const startLv=lv=>{S.lv[id]=lv;saveS();$$('.levels button').forEach(b=>b.classList.toggle('on',+b.dataset.lv===lv));startPractice(pwrap,{topics:[id],level:lv,mode:'Theo bài'})};
   const setTab=name=>{$$('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===name));$$('[data-pane]').forEach(p=>p.hidden=p.dataset.pane!==name);
     if(name==='pr')startLv(S.lv[id]||1);else{stopPractice();pwrap.innerHTML=''}};
   $$('.tabs button').forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
@@ -768,33 +983,117 @@ function renderMix(){
   </div><div class="pwrap"></div>`;
   $('#mlv').value=m.lv;$('#mmode').value=m.mode;$('#mtime').value=m.time;
   const setup=$('.setup'),pwrap=$('.pwrap');
-  const start=()=>{
+  $('.mstart').onclick=()=>{
     m.g=$$('.chips input:checked').map(x=>+x.value);m.lv=$('#mlv').value;m.mode=$('#mmode').value;m.time=$('#mtime').value;saveS();
     const topics=T.filter(t=>m.g.includes(t.g)).map(t=>t.id);
     if(!topics.length){alert('Hãy chọn ít nhất một nhóm bài.');return}
     setup.hidden=true;
-    startPractice(pwrap,{topics,level:+m.lv,weak:m.mode==='weak',limit:+m.time,tag:true,onStop:()=>{stopPractice();pwrap.innerHTML='';setup.hidden=false}});
+    startPractice(pwrap,{topics,level:+m.lv,weak:m.mode==='weak',limit:+m.time,tag:true,mode:+m.time?`Thử thách ${m.time} giây`:'Tổng hợp',
+      onStop:()=>{stopPractice();pwrap.innerHTML='';setup.hidden=false}});
   };
-  $('.mstart').onclick=start;
 }
 
-// ---------- Stats ----------
+// ---------- Ôn tập ----------
+function renderReview(){
+  const rv=reviewList();
+  if(!rv.length){app.innerHTML=`<h1>Ôn tập hôm nay</h1><div class="panel"><p>Chưa có dạng nào cần ôn 🎉. Hãy học thêm kỹ thuật mới hoặc vào Luyện tổng hợp.</p><a class="btn primary" href="#/">Về trang bài học</a></div>`;return}
+  app.innerHTML=`<div class="crumb"><a href="#/stats">← Thống kê</a></div><h1>Ôn tập hôm nay</h1>
+  <p class="lead">Trộn ${rv.length} dạng bạn còn yếu hoặc lâu chưa luyện: ${rv.map(x=>x.t.name).join(', ')}.</p><div class="pwrap"></div>`;
+  startPractice($('.pwrap'),{topics:rv.map(x=>x.t.id),levelOf:id=>S.lv[id]||1,weak:true,tag:true,mode:'Ôn tập'});
+}
+
+// ---------- Thống kê ----------
+function heatmap(){
+  const today=parseDay(dayKey(new Date())),start=addDays(parseDay(weekKey(dayKey(today))),-7*25);let s='';
+  for(let i=0;i<26*7;i++){const d=addDays(start,i);if(d>today){s+='<i class="hx"></i>';continue}
+    const k=dayKey(d),v=agg.days[k],n=v?v.n:0,l=n===0?0:n<20?1:n<50?2:n<100?3:4;
+    s+=`<i class="h${l}" data-tip="${dm(k)}: ${n} câu${n?`, đúng ${Math.round(v.c/n*100)}%`:''}"></i>`}
+  return `<div class="hmw"><div class="hm">${s}</div></div><div class="hml">Ít <i class="h0"></i><i class="h1"></i><i class="h2"></i><i class="h3"></i><i class="h4"></i> Nhiều</div>`;
+}
+function bars30(){
+  const today=parseDay(dayKey(new Date())),ds=[];for(let i=29;i>=0;i--){const k=dayKey(addDays(today,-i)),v=agg.days[k]||{n:0,c:0};ds.push({k,n:v.n,c:v.c})}
+  const mx=Math.max(10,...ds.map(x=>x.n)),W=300,H=120,t=14,b=16,bw=W/30;let s=`<line x1="0" x2="${W}" y1="${H-b}" y2="${H-b}" class="gl"/>`;
+  ds.forEach((x,i)=>{const h=(H-b-t)*x.n/mx;s+=`<rect x="${(i*bw+1).toFixed(1)}" y="${(H-b-h).toFixed(1)}" width="${(bw-2).toFixed(1)}" height="${h.toFixed(1)}" rx="1.5" class="${i===29?'bt':'bb'}"/><rect x="${(i*bw).toFixed(1)}" y="0" width="${bw.toFixed(1)}" height="${H}" fill="transparent" data-tip="${dm(x.k)}: ${x.n} câu${x.n?`, đúng ${Math.round(x.c/x.n*100)}%`:''}"/>`});
+  [0,15,29].forEach(i=>{s+=`<text x="${(i*bw+bw/2).toFixed(1)}" y="${H-3}" text-anchor="${i===0?'start':i===29?'end':'middle'}">${i===29?'Hôm nay':dm(ds[i].k)}</text>`});
+  s+=`<text x="0" y="9">${mx} câu</text>`;
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Số câu mỗi ngày trong 30 ngày">${s}</svg>`;
+}
+function trendSvg(id){
+  const Wd=agg.weeks[id]||{},cur=parseDay(weekKey(dayKey(new Date()))),pts=[];
+  for(let i=11;i>=0;i--){const k=dayKey(addDays(cur,-7*i)),w=Wd[k];pts.push({k,n:w?w[0]:0,acc:w&&w[0]?w[1]/w[0]:null,avg:w&&w[1]?w[2]/w[1]/1000:null})}
+  if(!pts.some(p=>p.n))return '<p class="muted">Chưa có dữ liệu cho kỹ thuật này trong 12 tuần gần đây.</p>';
+  const W=320,H=170,L=30,R=32,Tp=12,Bt=22,iw=W-L-R,ih=H-Tp-Bt;
+  const mT=Math.max(5,Math.ceil(Math.max(0,...pts.map(p=>p.avg||0))));
+  const X=i=>L+i*iw/11,YT=v=>Tp+ih*(1-v/mT),YA=v=>Tp+ih*(1-v);
+  const path=(key,Y)=>{let s='',pen=false;pts.forEach((p,i)=>{const v=p[key];if(v==null){pen=false;return}s+=(pen?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1);pen=true});return s};
+  let g='';
+  [0,.5,1].forEach(fr=>{const y=Tp+ih*(1-fr);g+=`<line x1="${L}" x2="${W-R}" y1="${y}" y2="${y}" class="gl"/><text x="${L-4}" y="${y+3}" text-anchor="end">${nf1.format(mT*fr)}s</text><text x="${W-R+4}" y="${y+3}" class="ta">${fr*100}%</text>`});
+  [0,4,8,11].forEach(i=>{g+=`<text x="${X(i)}" y="${H-5}" text-anchor="middle">${i===11?'Tuần này':dm(pts[i].k)}</text>`});
+  g+=`<path d="${path('acc',YA)}" class="la"/><path d="${path('avg',YT)}" class="lt"/>`;
+  pts.forEach((p,i)=>{const tip=`Tuần từ ${dm(p.k)}: ${p.n} câu${p.n?`, đúng ${Math.round(p.acc*100)}%${p.avg!=null?`, TB ${nf1.format(p.avg)} s`:''}`:''}`;
+    if(p.acc!=null)g+=`<circle cx="${X(i)}" cy="${YA(p.acc)}" r="2.5" class="pa"/>`;
+    if(p.avg!=null)g+=`<circle cx="${X(i)}" cy="${YT(p.avg)}" r="3" class="pt2"/>`;
+    g+=`<rect x="${X(i)-iw/22}" y="0" width="${iw/11}" height="${H}" fill="transparent" data-tip="${tip}"/>`});
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Tiến bộ theo tuần">${g}</svg>
+  <div class="lgd"><span><i class="kt"></i>Thời gian TB mỗi câu đúng (trục trái)</span><span><i class="ka"></i>Tỷ lệ đúng (trục phải)</span></div>`;
+}
 function renderStats(){
-  let N=0,C=0,Tm=0;Object.values(stats).forEach(s=>{N+=s.n;C+=s.c;Tm+=s.t});
-  const row=t=>{const s=stats[t.id];if(!s||!s.n)return`<tr><td><a href="#/t/${t.id}">${t.name}</a></td><td>–</td><td>–</td><td class="hide-s">–</td></tr>`;
-    return`<tr><td><a href="#/t/${t.id}">${t.name}</a></td><td>${s.n}</td><td>${Math.round(s.c/s.n*100)}%</td><td class="hide-s">${s.c?fmtS(s.t/s.c):'–'}</td></tr>`};
-  app.innerHTML=`<h1>Thống kê</h1><p class="lead">Mục tiêu cho mỗi kỹ thuật: đúng trên 90%, trung bình dưới 5 giây.</p>
-  <div class="sum"><div><b>${N}</b>câu đã làm</div><div><b>${N?Math.round(C/N*100):0}%</b>chính xác</div><div><b>${C?fmtS(Tm/C):'–'}</b>TB mỗi câu đúng</div></div>
-  <div class="panel" style="padding:.4rem .8rem;overflow-x:auto"><table class="st"><thead><tr><th>Kỹ thuật</th><th>Số câu</th><th>Đúng</th><th class="hide-s">TB</th></tr></thead><tbody>
-  ${GROUPS.map((g,gi)=>`<tr class="gr"><td colspan="4">Nhóm ${gi} · ${g.n}</td></tr>`+T.filter(t=>t.g===gi).map(row).join('')).join('')}
+  if(SY.token&&!syncing&&(!server||Date.now()-server.at>60000)&&Date.now()-lastPullTry>60000)syncAll();
+  let N=0,C=0,Tm=0;Object.values(agg.topics).forEach(s=>{N+=s.n;C+=s.c;Tm+=s.t});
+  const tk=dayKey(new Date()),td=agg.days[tk]||{n:0,c:0};
+  let streak=0,d=new Date();if(!agg.days[dayKey(d)])d=addDays(d,-1);while(agg.days[dayKey(d)]){streak++;d=addDays(d,-1)}
+  const nDays=Object.keys(agg.days).length;
+  const src=SY.token?`☁ Dữ liệu từ Google Sheet${server?` · cập nhật ${hhmm(server.at)}`:''}${queue.length?` · ${queue.length} câu chưa gửi`:''} <button class="link srf">Làm mới</button>`
+    :`💾 Dữ liệu đang lưu trên máy này. <a href="#/account">Đăng nhập</a> để lưu vào Google Sheet và xem trên mọi thiết bị.`;
+  const done=T.filter(t=>stats[t.id]&&stats[t.id].n).sort((a,b)=>stats[b.id].n-stats[a.id].n);
+  if(!S.trend||!stats[S.trend])S.trend=done.length?done[0].id:'';
+  const rv=reviewList();
+  const row=t=>{const s=stats[t.id];if(!s||!s.n)return`<tr><td><a href="#/t/${t.id}">${t.name}</a></td><td>–</td><td>–</td><td>–</td><td class="hide-s">–</td></tr>`;
+    const acc=Math.round(s.c/s.n*100);return`<tr><td><a href="#/t/${t.id}">${t.name}</a></td><td>${s.n}</td><td class="${acc>=90?'cg':acc>=70?'cm':'cl'}">${acc}%</td><td>${s.c?fmtS(s.t/s.c):'–'}</td><td class="hide-s">${s.last?dm(s.last):'–'}</td></tr>`};
+  app.innerHTML=`<h1>Thống kê</h1><p class="lead src">${src}</p>
+  <div class="sum">
+    <div><b>${td.n}</b>câu hôm nay</div><div><b>${streak} 🔥</b>ngày liên tiếp</div><div><b>${nDays}</b>ngày đã luyện</div>
+    <div><b>${N}</b>tổng số câu</div><div><b>${N?Math.round(C/N*100):0}%</b>chính xác</div><div><b>${C?fmtS(Tm/C):'–'}</b>TB câu đúng</div>
+  </div>
+  <div class="panel"><h2>Lịch luyện tập (26 tuần)</h2>${heatmap()}<div class="tip muted">Chạm vào một ô để xem chi tiết.</div></div>
+  <div class="panel"><h2>30 ngày gần đây</h2>${bars30()}<div class="tip muted">Chạm vào một cột để xem chi tiết.</div></div>
+  ${rv.length?`<div class="panel rv"><div class="rvh"><h2>🔁 Nên ôn hôm nay</h2><a class="btn primary" href="#/review">Ôn ngay</a></div><div class="rvl">${rv.map(x=>`<a href="#/t/${x.t.id}" class="rvi"><b>${x.t.name}</b><span>${x.why.join(' · ')}</span></a>`).join('')}</div></div>`:''}
+  <div class="panel"><h2>Tiến bộ theo tuần</h2>${done.length?`<select class="tsel" aria-label="Chọn kỹ thuật">${done.map(t=>`<option value="${t.id}" ${t.id===S.trend?'selected':''}>${t.name} (${stats[t.id].n} câu)</option>`).join('')}</select><div class="tbox">${trendSvg(S.trend)}</div><div class="tip muted"></div>`:'<p class="muted">Hãy luyện vài bài để xem biểu đồ tiến bộ.</p>'}</div>
+  <div class="panel" style="padding:.4rem .8rem;overflow-x:auto"><table class="st"><thead><tr><th>Kỹ thuật</th><th>Câu</th><th>Đúng</th><th>TB</th><th class="hide-s">Lần cuối</th></tr></thead><tbody>
+  ${GROUPS.map((g,gi)=>`<tr class="gr"><td colspan="5">Nhóm ${gi} · ${g.n}</td></tr>`+T.filter(t=>t.g===gi).map(row).join('')).join('')}
   </tbody></table></div>
-  <button class="btn ghost reset">Xóa toàn bộ thống kê</button>`;
-  $('.reset').onclick=()=>{if(confirm('Xóa toàn bộ thống kê luyện tập?')){stats={};LS.set('mm_stats',stats);for(const k of [60,120])LS.set('mm_best_'+k,0);renderStats()}};
+  ${SY.token||server?'<p class="muted" style="font-size:.85rem">Muốn xóa dữ liệu: xóa các dòng trong tab <b>Log</b> của Google Sheet rồi bấm Làm mới.</p>':'<button class="btn ghost reset">Xóa toàn bộ thống kê trên máy này</button>'}`;
+  const srf=$('.srf');if(srf)srf.onclick=()=>{lastPullTry=0;srf.textContent='Đang tải…';syncAll()};
+  const ts=$('.tsel');if(ts)ts.onchange=()=>{S.trend=ts.value;saveS();$('.tbox').innerHTML=trendSvg(S.trend)};
+  app.onclick=e=>{const el=e.target.closest('[data-tip]');if(!el)return;const tip=$('.tip',el.closest('.panel'));if(tip)tip.textContent=el.dataset.tip};
+  const rs=$('.reset');if(rs)rs.onclick=()=>{if(confirm('Xóa toàn bộ thống kê trên máy này?')){agg={topics:{},days:{},weeks:{}};stats=agg.topics;queue=[];saveQ();LS.set('mm_agg',agg);LS.set('mm_stats',null);for(const k of [60,120])LS.set('mm_best_'+k,0);updSync();renderStats()}};
 }
 
-// ---------- Practice engine ----------
+// ---------- Tài khoản ----------
+function renderAccount(){
+  const url=apiUrl();
+  app.innerHTML=`<h1>Tài khoản & đồng bộ</h1>
+  <div class="panel">${SY.token?`<div class="kv"><span>Đăng nhập</span><b>${esc(SY.user)}</b>
+    <span>Câu chờ gửi</span><b>${queue.length}</b>
+    <span>Gửi lần cuối</span><b>${SY.lastSync?hhmm(SY.lastSync):'–'}</b>
+    <span>Máy chủ</span><span class="url">${esc(url)}</span></div>
+    ${SY.err?`<p class="errt">⚠ ${esc(SY.err)}</p>`:''}
+    <div class="btns"><button class="btn primary async">Đồng bộ ngay</button><button class="btn aout">Đăng xuất</button></div>`
+  :`<p>Bạn đang dùng <b>ngoại tuyến</b>. Kết quả lưu trên máy này${queue.length?` — ${queue.length} câu sẽ được gửi lên Google Sheet khi bạn đăng nhập`:''}.</p><div class="btns"><button class="btn primary ain">Đăng nhập</button></div>`}</div>
+  <div class="panel"><h2>Cài lên màn hình chính điện thoại</h2>
+  <ul><li><b>iPhone (Safari):</b> bấm nút Chia sẻ → <i>Thêm vào MH chính</i>.</li><li><b>Android (Chrome):</b> bấm ⋮ → <i>Thêm vào màn hình chính</i> / <i>Cài đặt ứng dụng</i>.</li></ul>
+  <p class="muted" style="margin:0">Khi mất mạng bạn vẫn luyện được; kết quả tự gửi lên khi có mạng trở lại.</p></div>`;
+  const b1=$('.async');if(b1)b1.onclick=async()=>{b1.disabled=true;b1.textContent='Đang đồng bộ…';lastPullTry=0;await syncAll();renderAccount()};
+  const b2=$('.aout');if(b2)b2.onclick=async()=>{
+    if(queue.length){await flush()}
+    if(queue.length&&!confirm(`Còn ${queue.length} câu chưa gửi được. Chúng vẫn được giữ trên máy và sẽ gửi khi đăng nhập lại. Đăng xuất?`))return;
+    const tok=SY.token;SY.token=null;SY.offline=false;saveSY();api('logout',{token:tok}).catch(()=>{});updSync();renderAccount();showLogin()};
+  const b3=$('.ain');if(b3)b3.onclick=()=>showLogin();
+}
+
+// ================== Bộ máy luyện tập ==================
 let P=null;
-function stopPractice(){if(P){clearInterval(P.iv);clearTimeout(P.to);P=null}}
+function stopPractice(){if(P){clearInterval(P.iv);clearTimeout(P.to);P=null}if(queue.length&&SY.token)flush()}
 function pickTopic(cfg){
   const ids=cfg.topics;if(ids.length===1)return ids[0];
   if(!cfg.weak)return pick(ids);
@@ -813,7 +1112,7 @@ function startPractice(wrap,cfg){
   </div>
   <div class="kp">${['7','8','9','⌫','4','5','6','000','1','2','3',',','0','C'].map(k=>`<button data-k="${k}" class="${k==='⌫'||k==='C'?'fn':''}">${k}</button>`).join('')}<button data-k="ok" class="ok2">OK ↵</button></div>
   <div class="kpt"><button class="link kptog"></button>${cfg.limit?'':`<label><input type="checkbox" class="auto" ${S.auto?'checked':''}> Tự chuyển câu khi đúng</label>`}</div>`;
-  P={wrap,cfg,n:0,c:0,streak:0,best:0,tsum:0,cur:null,last:'',answered:false,over:false,to:null,
+  P={wrap,cfg,sid:uid(),n:0,c:0,streak:0,best:0,tsum:0,cur:null,last:'',answered:false,over:false,to:null,
      deadline:cfg.limit?Date.now()+cfg.limit*1000:0,
      inp:$('.ans',wrap),q:$('.q',wrap),qh:$('.qh',wrap),tag:$('.qtag',wrap),fb:$('.fb',wrap),ch:$('.choices',wrap),arow:$('.arow',wrap),
      unit:$('.unit',wrap),nxt:$('.nxt',wrap),rev:$('.reveal',wrap),ps:$('.ps',wrap),pt:$('.pt',wrap),kp:$('.kp',wrap)};
@@ -828,27 +1127,26 @@ function startPractice(wrap,cfg){
     if(p.answered||(p.cur&&p.cur.choices))return;
     if(k==='⌫')p.inp.value=p.inp.value.slice(0,-1);else if(k==='C')p.inp.value='';else p.inp.value+=k};
   const kptog=$('.kptog',wrap);
-  const applyKp=()=>{p.kp.hidden=!S.kp||!!(p.cur&&p.cur.choices);p.inp.readOnly=S.kp;p.inp.inputMode=S.kp?'none':'decimal';
+  p.applyKp=()=>{p.kp.hidden=!S.kp||!!(p.cur&&p.cur.choices);p.inp.readOnly=S.kp;p.inp.inputMode=S.kp?'none':'decimal';
     kptog.textContent=S.kp?'⌨ Dùng bàn phím của máy':'🔢 Dùng bàn phím số trên màn hình'};
-  p.applyKp=applyKp;
-  kptog.onclick=()=>{S.kp=!S.kp;saveS();applyKp();if(!S.kp)p.inp.focus()};
+  kptog.onclick=()=>{S.kp=!S.kp;saveS();p.applyKp();if(!S.kp)p.inp.focus()};
   p.iv=setInterval(tick,100);
   nextQ();
 }
 function nextQ(){
   const p=P;if(!p||p.over)return;clearTimeout(p.to);
-  const id=pickTopic(p.cfg),t=TT[id],lv=p.cfg.level||ri(1,3);
+  const id=pickTopic(p.cfg),t=TT[id],lv=p.cfg.level||(p.cfg.levelOf?p.cfg.levelOf(id):ri(1,3));
   let q,tries=0;do{q=t.gen(lv);tries++}while(q.q===p.last&&tries<6);
   p.last=q.q;p.cur=Object.assign(q,{id,lv});p.answered=false;
   p.tag.textContent=p.cfg.tag?`${t.name} · Cấp ${lv}`:'';
-  p.q.innerHTML=q.q;p.q.classList.toggle('long',q.q.replace(/<[^>]+>/g,'').length>28);
+  p.q.innerHTML=q.q;p.q.classList.toggle('long',plain(q.q).length>28);
   p.qh.textContent=q.h||'';p.qh.hidden=!q.h;
   p.fb.innerHTML='';p.nxt.hidden=true;p.rev.hidden=false;
   if(q.choices){p.arow.hidden=true;p.ch.hidden=false;p.ch.innerHTML=q.choices.map((c,i)=>`<button data-c="${c}">${c} <small class="muted">(${i+1})</small></button>`).join('');
     $$('button',p.ch).forEach(b=>b.onclick=()=>submit(b.dataset.c))}
   else{p.arow.hidden=false;p.ch.hidden=true;p.ch.innerHTML='';p.inp.value='';p.unit.textContent=q.u||'';$('.chk',p.wrap).hidden=false}
   p.applyKp();
-  if(!S.kp&&!q.choices)p.inp.focus({preventScroll:true});
+  if(!S.kp&&!q.choices&&LG.hidden)p.inp.focus({preventScroll:true});
   p.t0=performance.now();tick();
 }
 function submit(raw){
@@ -861,7 +1159,7 @@ function submit(raw){
   const ms=performance.now()-p.t0;
   p.answered=true;p.n++;
   if(ok){p.c++;p.streak++;p.best=Math.max(p.best,p.streak);p.tsum+=ms}else p.streak=0;
-  record(q.id,ok,ms);
+  record(q,ok,ms,raw===null?'(xem lời giải)':shown,p);
   $('.chk',p.wrap).hidden=true;p.rev.hidden=true;
   if(q.choices)$$('button',p.ch).forEach(b=>{b.disabled=true;if(b.dataset.c===q.ans)b.style.borderColor='var(--ok)'});
   const back=p.cfg.tag?` <button class="link" onclick="location.hash='#/t/${q.id}'">Ôn lại bài này</button>`:'';
@@ -884,14 +1182,13 @@ function endSprint(){
   const cfg=p.cfg,wrap=p.wrap;
   wrap.innerHTML=`<div class="panel done"><h2>Hết giờ!</h2><div class="bignum">${p.c}</div><p>câu đúng trong ${cfg.limit} giây · độ chính xác ${p.n?Math.round(p.c/p.n*100):0}% · chuỗi dài nhất ${p.best}</p>
   <p><b>${nb?'🏆 Kỷ lục mới!':`Kỷ lục của bạn: ${best} câu`}</b></p><div class="btns"><button class="btn primary again">Chơi lại</button>${cfg.onStop?'<button class="btn back">Đổi thiết lập</button>':''}</div></div>`;
-  P=null;
+  P=null;flush();
   $('.again',wrap).onclick=()=>startPractice(wrap,cfg);
   if(cfg.onStop)$('.back',wrap).onclick=cfg.onStop;
 }
 document.addEventListener('keydown',e=>{
-  const p=P;if(!p||p.over||!document.body.contains(p.wrap))return;
-  if(e.target.matches('select,textarea'))return;
-  if(e.target.matches('input[type=checkbox]'))return;
+  const p=P;if(!p||p.over||!document.body.contains(p.wrap)||!LG.hidden)return;
+  if(e.target.matches('select,textarea,input:not(.ans)'))return;
   if(e.key==='Enter'){if(e.target.tagName==='BUTTON'&&!p.wrap.contains(e.target))return;e.preventDefault();p.answered?nextQ():(p.cur.choices?null:submit());return}
   if(p.answered||!p.cur)return;
   if(p.cur.choices){if(/^[1-9]$/.test(e.key)){const c=p.cur.choices[+e.key-1];if(c)submit(c)}return}
@@ -909,8 +1206,18 @@ fabp.onclick=e=>{e.stopPropagation();const b=e.target.closest('button');if(!b)re
   S.fs=d===0?1:Math.min(1.6,Math.max(.8,Math.round((S.fs+d*.1)*10)/10));saveS();applyFs()};
 document.addEventListener('click',()=>{if(!fabp.hidden){fabp.hidden=true;fabb.setAttribute('aria-expanded','false')}});
 
+// ---------- Khởi động ----------
+rebuild();
 applyFs();
 route();
+updSync();
+if(!SY.token&&!SY.offline)showLogin();else if(SY.token)syncAll();
+window.addEventListener('online',()=>syncAll());
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='hidden'){if(SY.token&&queue.length)flush({keepalive:true})}
+  else if(SY.token&&(!server||Date.now()-server.at>300000))syncAll();
+});
+if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
 </body>
 </html>
